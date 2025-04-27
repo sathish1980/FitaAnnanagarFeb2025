@@ -14,9 +14,12 @@ public class DBConnections {
 	        try {
 	            // below two lines are used for connectivity.
 	            Class.forName("com.mysql.cj.jdbc.Driver");
-	            connection = DriverManager.getConnection(
-	                "jdbc:mysql://localhost:3306/FITAAnnanagar",
-	                "root", "Admin@123");
+	            connection = DriverManager.getConnection(ReadProperty.readData().getProperty("hostdetails")+ReadProperty.readData().getProperty("dbname"),
+	            		ReadProperty.readData().getProperty("username"),
+	            		ReadProperty.readData().getProperty("password"));
+	                
+	            		/*"jdbc:mysql://localhost:3306/FITAAnnanagar",
+	                "root", "Admin@123");*/
 	 
 	            // mydb is database
 	            // mydbuser is name of database
